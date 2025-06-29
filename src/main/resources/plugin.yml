@@ -1,0 +1,80 @@
+name: UltimateRanks
+version: '${project.version}'
+main: gabriel.moreira.dev.ultimateranks.UltimateRanks
+api-version: '1.16'
+authors: [Gabriel Moreira]
+description: Plugin de rankings para servidores Spigot/Paper
+website: https://github.com/gabrielmoreira/UltimateRanks
+
+# Dependências
+depend: []
+softdepend: [PlaceholderAPI]
+
+# Comandos
+commands:
+  ur:
+    description: Comando principal do UltimateRanks
+    usage: /<command> reload
+    aliases: [ultimateranks]
+    permission: ultimateranks.admin
+  top:
+    description: Comando para visualizar rankings
+    usage: /<command> <categoria>
+    aliases: [ranking, rank]
+    permission: ultimateranks.top
+
+# Permissões
+permissions:
+  ultimateranks.admin:
+    description: Permissão de administrador do UltimateRanks
+    default: op
+    children:
+      ultimateranks.reload: true
+      ultimateranks.top: true
+  ultimateranks.reload:
+    description: Permissão para recarregar o plugin
+    default: op
+  ultimateranks.top:
+    description: Permissão para usar comandos de ranking
+    default: true
+    children:
+      ultimateranks.top.andarblocos: true
+      ultimateranks.top.matarpvp: true
+      ultimateranks.top.mortes: true
+      ultimateranks.top.carrinho: true
+      ultimateranks.top.barco: true
+      ultimateranks.top.tempoonline: true
+      ultimateranks.top.mobs: true
+      ultimateranks.top.quebrar: true
+      ultimateranks.top.colocar: true
+      ultimateranks.top.voar: true
+  ultimateranks.top.andarblocos:
+    description: Permissão para ver ranking de blocos andados
+    default: true
+  ultimateranks.top.matarpvp:
+    description: Permissão para ver ranking de kills PvP
+    default: true
+  ultimateranks.top.mortes:
+    description: Permissão para ver ranking de mortes
+    default: true
+  ultimateranks.top.carrinho:
+    description: Permissão para ver ranking de carrinho de mina
+    default: true
+  ultimateranks.top.barco:
+    description: Permissão para ver ranking de barco
+    default: true
+  ultimateranks.top.tempoonline:
+    description: Permissão para ver ranking de tempo online
+    default: true
+  ultimateranks.top.mobs:
+    description: Permissão para ver ranking de mobs mortos
+    default: true
+  ultimateranks.top.quebrar:
+    description: Permissão para ver ranking de blocos quebrados
+    default: true
+  ultimateranks.top.colocar:
+    description: Permissão para ver ranking de blocos colocados
+    default: true
+  ultimateranks.top.voar:
+    description: Permissão para ver ranking de voo
+    default: true 

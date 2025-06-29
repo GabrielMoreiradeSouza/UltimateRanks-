@@ -1,0 +1,70 @@
+# UltimateRanks - Configuração Principal
+# Plugin de rankings para servidores Spigot/Paper
+
+# Configurações do Banco de Dados
+database:
+  host: "localhost"
+  port: 3306
+  database: "ultimateranks"
+  username: "root"
+  password: "password"
+  connection-pool:
+    maximum-pool-size: 10
+    minimum-idle: 5
+    connection-timeout: 30000
+    idle-timeout: 600000
+    max-lifetime: 1800000
+
+# Configurações Gerais
+settings:
+  # Intervalo de atualização do banco de dados (em segundos)
+  save-interval: 300
+  
+  # Número de jogadores exibidos no ranking (máximo 10)
+  top-size: 10
+  
+  # Ativar/desativar categorias
+  categories:
+    andarblocos: true
+    matarpvp: true
+    mortes: true
+    carrinho: true
+    barco: true
+    tempoonline: true
+    mobs: true
+    quebrar: true
+    colocar: true
+    voar: true
+
+# Configurações de Performance
+performance:
+  # Cache de dados em memória (em segundos)
+  cache-duration: 60
+  
+  # Atualizar cache automaticamente
+  auto-update-cache: true
+  
+  # Log de queries lentas (em milissegundos)
+  slow-query-threshold: 1000
+
+# Configurações de Debug
+debug:
+  # Ativar logs de debug
+  enabled: false
+  
+  # Log de queries SQL
+  log-sql: false
+  
+  # Log de eventos
+  log-events: false
+
+# Configurações de Compatibilidade
+compatibility:
+  # Versão mínima do servidor
+  min-version: "1.16.4"
+  
+  # Versão máxima do servidor
+  max-version: "1.21.6"
+  
+  # Usar NMS (apenas se necessário)
+  use-nms: false 

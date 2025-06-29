@@ -1,0 +1,106 @@
+# UltimateRanks - Mensagens
+# Personalize todas as mensagens do plugin aqui
+
+# Prefixo das mensagens
+prefix: "&8[&bUltimateRanks&8] &r"
+
+# Mensagens Gerais
+general:
+  reload-success: "&aConfigurações recarregadas com sucesso!"
+  reload-error: "&cErro ao recarregar configurações!"
+  no-permission: "&cVocê não tem permissão para usar este comando!"
+  player-only: "&cEste comando só pode ser usado por jogadores!"
+  category-disabled: "&cEsta categoria está desabilitada!"
+  database-error: "&cErro de conexão com o banco de dados!"
+
+# Mensagens de Comandos
+commands:
+  ur:
+    usage: "&eUso: /ur reload"
+    reload-success: "&aPlugin recarregado com sucesso!"
+  top:
+    usage: "&eUso: /top <categoria>"
+    categories:
+      title: "&6&l=== Categorias Disponíveis ==="
+      andarblocos: "&e• andarblocos &7- Jogadores que mais caminharam"
+      matarpvp: "&e• matarpvp &7- Jogadores que mais mataram outros"
+      mortes: "&e• mortes &7- Jogadores que mais morreram"
+      carrinho: "&e• carrinho &7- Maior distância com carrinho de mina"
+      barco: "&e• barco &7- Maior distância com barco"
+      tempoonline: "&e• tempoonline &7- Mais tempo online"
+      mobs: "&e• mobs &7- Mais mobs mortos"
+      quebrar: "&e• quebrar &7- Mais blocos quebrados"
+      colocar: "&e• colocar &7- Mais blocos colocados"
+      voar: "&e• voar &7- Mais tempo voando"
+
+# Mensagens de Ranking
+ranking:
+  title: "&6&l=== Top {size} {category} ==="
+  no-data: "&cNenhum dado encontrado para esta categoria!"
+  position: "&e#{position} &7- &f{player} &7- &a{value}"
+  position-with-suffix: "&e#{position} &7- &f{player} &7- &a{value} {suffix}"
+  player-position: "&eSua posição: &f#{position} &7- &a{value}"
+  player-not-ranked: "&cVocê ainda não está no ranking!"
+
+# Categorias
+categories:
+  andarblocos:
+    name: "Blocos Andados"
+    suffix: "blocos"
+    description: "Jogadores que mais caminharam em blocos"
+  matarpvp:
+    name: "Kills PvP"
+    suffix: "kills"
+    description: "Jogadores que mais mataram outros jogadores"
+  mortes:
+    name: "Mortes"
+    suffix: "mortes"
+    description: "Jogadores que mais morreram"
+  carrinho:
+    name: "Carrinho de Mina"
+    suffix: "blocos"
+    description: "Maior distância com carrinho de mina"
+  barco:
+    name: "Barco"
+    suffix: "blocos"
+    description: "Maior distância com barco"
+  tempoonline:
+    name: "Tempo Online"
+    suffix: "minutos"
+    description: "Mais tempo online no servidor"
+  mobs:
+    name: "Mobs Mortos"
+    suffix: "mobs"
+    description: "Mais mobs mortos"
+  quebrar:
+    name: "Blocos Quebrados"
+    suffix: "blocos"
+    description: "Mais blocos quebrados"
+  colocar:
+    name: "Blocos Colocados"
+    suffix: "blocos"
+    description: "Mais blocos colocados"
+  voar:
+    name: "Tempo Voando"
+    suffix: "minutos"
+    description: "Mais tempo voando com elytra/fly"
+
+# Mensagens de Erro
+errors:
+  invalid-category: "&cCategoria inválida! Use /top para ver as opções disponíveis."
+  database-connection: "&cErro ao conectar com o banco de dados!"
+  database-query: "&cErro ao executar consulta no banco de dados!"
+  player-not-found: "&cJogador não encontrado!"
+  category-not-enabled: "&cEsta categoria está desabilitada nas configurações!"
+
+# Mensagens de Debug
+debug:
+  event-fired: "&7[DEBUG] Evento disparado: {event}"
+  sql-executed: "&7[DEBUG] SQL executado: {sql}"
+  cache-updated: "&7[DEBUG] Cache atualizado para categoria: {category}"
+  player-data-saved: "&7[DEBUG] Dados salvos para jogador: {player}"
+
+# PlaceholderAPI
+placeholders:
+  not-found: "N/A"
+  loading: "Carregando..." 
