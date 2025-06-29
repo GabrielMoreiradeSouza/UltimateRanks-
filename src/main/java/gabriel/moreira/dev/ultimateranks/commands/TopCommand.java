@@ -46,6 +46,8 @@ public class TopCommand implements CommandExecutor, TabCompleter {
             sender.sendMessage(plugin.getMessageUtils().get("errors.category-not-enabled"));
             return true;
         }
+        // Atualizar ranking da categoria antes de mostrar
+        plugin.getStatsManager().forceUpdateRanking(category);
         int topSize = plugin.getConfigManager().getTopSize();
         List<PlayerStats> top = statsManager.getTop(category, topSize);
         if (top.isEmpty()) {

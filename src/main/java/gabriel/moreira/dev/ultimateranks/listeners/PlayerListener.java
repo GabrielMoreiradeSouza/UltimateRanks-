@@ -86,19 +86,23 @@ public class PlayerListener implements Listener {
             event.getFrom().getBlockY() != event.getTo().getBlockY() ||
             event.getFrom().getBlockZ() != event.getTo().getBlockZ()) {
             stats.andarBlocos++;
+            statsManager.markCategoryChanged("andarblocos");
         }
         // Carrinho de mina
         Entity vehicle = player.getVehicle();
         if (vehicle != null && vehicle instanceof Vehicle && vehicle.getType().toString().contains("MINECART")) {
             stats.carrinho++;
+            statsManager.markCategoryChanged("carrinho");
         }
         // Barco
         if (vehicle != null && vehicle.getType().toString().contains("BOAT")) {
             stats.barco++;
+            statsManager.markCategoryChanged("barco");
         }
         // Voo (elytra ou fly)
         if (player.isFlying() || player.isGliding()) {
             stats.voar++;
+            statsManager.markCategoryChanged("voar");
         }
     }
 
@@ -107,6 +111,7 @@ public class PlayerListener implements Listener {
         Player player = event.getPlayer();
         PlayerStats stats = statsManager.getPlayerStats(player.getUniqueId(), player.getName());
         stats.quebrar++;
+        statsManager.markCategoryChanged("quebrar");
     }
 
     @EventHandler
@@ -114,6 +119,7 @@ public class PlayerListener implements Listener {
         Player player = event.getPlayer();
         PlayerStats stats = statsManager.getPlayerStats(player.getUniqueId(), player.getName());
         stats.colocar++;
+        statsManager.markCategoryChanged("colocar");
     }
 
     @EventHandler
@@ -123,6 +129,7 @@ public class PlayerListener implements Listener {
         if (killer != null) {
             PlayerStats stats = statsManager.getPlayerStats(killer.getUniqueId(), killer.getName());
             stats.mobs++;
+            statsManager.markCategoryChanged("mobs");
         }
     }
 
@@ -131,10 +138,13 @@ public class PlayerListener implements Listener {
         Player victim = event.getEntity();
         PlayerStats statsVictim = statsManager.getPlayerStats(victim.getUniqueId(), victim.getName());
         statsVictim.mortes++;
+        statsManager.markCategoryChanged("mortes");
+        
         Player killer = victim.getKiller();
         if (killer != null && !killer.getUniqueId().equals(victim.getUniqueId())) {
             PlayerStats statsKiller = statsManager.getPlayerStats(killer.getUniqueId(), killer.getName());
             statsKiller.matarPvp++;
+            statsManager.markCategoryChanged("matarpvp");
         }
     }
 

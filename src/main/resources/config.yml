@@ -47,6 +47,22 @@ performance:
   # Log de queries lentas (em milissegundos)
   slow-query-threshold: 1000
 
+# Configurações de Atualização Automática
+auto-update:
+  # Ativar atualização automática dos rankings
+  enabled: true
+  
+  # Intervalo de atualização dos rankings (em segundos)
+  # Recomendado: 60 (1 minuto) para rankings em tempo real
+  # Mínimo: 30 segundos para não sobrecarregar o banco
+  interval: 60
+  
+  # Atualizar apenas categorias com mudanças (economiza performance)
+  smart-update: true
+  
+  # Log de atualizações (útil para debug)
+  log-updates: false
+
 # Configurações de Debug
 debug:
   # Ativar logs de debug

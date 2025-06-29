@@ -3,6 +3,7 @@ gabriel\moreira\dev\ultimateranks\stats\PlayerStats.class
 gabriel\moreira\dev\ultimateranks\database\DatabaseManager.class
 gabriel\moreira\dev\ultimateranks\UltimateRanks.class
 gabriel\moreira\dev\ultimateranks\placeholders\PlaceholderManager.class
+gabriel\moreira\dev\ultimateranks\stats\StatsManager$1.class
 gabriel\moreira\dev\ultimateranks\commands\ReloadCommand.class
 gabriel\moreira\dev\ultimateranks\commands\TopCommand.class
 gabriel\moreira\dev\ultimateranks\stats\StatsManager.class

@@ -1,9 +1,5 @@
 package gabriel.moreira.dev.ultimateranks.config;
 
-import gabriel.moreira.dev.ultimateranks.UltimateRanks;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,6 +8,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
+
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+
+import gabriel.moreira.dev.ultimateranks.UltimateRanks;
 
 /**
  * Gerenciador de configurações do plugin
@@ -56,6 +57,12 @@ public class ConfigManager {
     private boolean logSql;
     private boolean logEvents;
     
+    // Configurações de atualização automática
+    private boolean autoUpdateEnabled;
+    private int autoUpdateInterval;
+    private boolean smartUpdate;
+    private boolean logUpdates;
+    
     public ConfigManager(UltimateRanks plugin) {
         this.plugin = plugin;
         this.logger = plugin.getLogger();
@@ -72,6 +79,7 @@ public class ConfigManager {
         loadGeneralConfig();
         loadPerformanceConfig();
         loadDebugConfig();
+        loadAutoUpdateConfig();
     }
     
     /**
@@ -193,6 +201,24 @@ public class ConfigManager {
     }
     
     /**
+     * Carrega configurações de atualização automática
+     */
+    private void loadAutoUpdateConfig() {
+        autoUpdateEnabled = config.getBoolean("auto-update.enabled", true);
+        autoUpdateInterval = config.getInt("auto-update.interval", 60);
+        smartUpdate = config.getBoolean("auto-update.smart-update", true);
+        logUpdates = config.getBoolean("auto-update.log-updates", false);
+        
+        // Validar intervalo mínimo
+        if (autoUpdateInterval < 30) {
+            autoUpdateInterval = 30;
+            logger.warning("Intervalo de atualização muito baixo! Definido para 30 segundos.");
+        }
+        
+        logger.info("Configurações de atualização automática carregadas! Intervalo: " + autoUpdateInterval + "s");
+    }
+    
+    /**
      * Retorna a lista de categorias disponíveis
      */
     public String[] getAvailableCategories() {
@@ -298,6 +324,24 @@ public class ConfigManager {
     
     public boolean isLogEvents() {
         return logEvents;
+    }
+    
+    // Getters para configurações de atualização automática
+    
+    public boolean isAutoUpdateEnabled() {
+        return autoUpdateEnabled;
+    }
+    
+    public int getAutoUpdateInterval() {
+        return autoUpdateInterval;
+    }
+    
+    public boolean isSmartUpdate() {
+        return smartUpdate;
+    }
+    
+    public boolean isLogUpdates() {
+        return logUpdates;
     }
     
     // Getters para arquivos de configuração

@@ -90,7 +90,7 @@ public class PlaceholderManager extends PlaceholderExpansion {
         var top = statsManager.getTop(category, position);
         if (top.size() >= position) {
             PlayerStats stats = top.get(position - 1);
-            return stats.getName();
+            return stats.getName() + " - " + getStatValue(stats, category);
         }
 
         return plugin.getMessageUtils().get("placeholders.not-found");

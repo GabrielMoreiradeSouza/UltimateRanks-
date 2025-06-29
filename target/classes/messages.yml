@@ -99,8 +99,19 @@ debug:
   sql-executed: "&7[DEBUG] SQL executado: {sql}"
   cache-updated: "&7[DEBUG] Cache atualizado para categoria: {category}"
   player-data-saved: "&7[DEBUG] Dados salvos para jogador: {player}"
+  ranking-updated: "&7[DEBUG] Ranking atualizado: {category}"
+  auto-update-started: "&7[DEBUG] Atualização automática iniciada"
+  auto-update-stopped: "&7[DEBUG] Atualização automática parada"
 
 # PlaceholderAPI
 placeholders:
   not-found: "N/A"
-  loading: "Carregando..." 
+  loading: "Carregando..."
+
+# Atualização Automática
+auto-update:
+  enabled: "&aAtualização automática ativada! Intervalo: {interval}s"
+  disabled: "&cAtualização automática desativada"
+  interval-changed: "&eIntervalo de atualização alterado para: {interval}s"
+  smart-update-enabled: "&aSmart update ativado - apenas categorias com mudanças serão atualizadas"
+  smart-update-disabled: "&cSmart update desativado - todas as categorias serão atualizadas" 
